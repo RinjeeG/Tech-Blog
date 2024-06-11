@@ -1,4 +1,22 @@
-// Handle creating a new post
+document.addEventListener('DOMContentLoaded', () => {
+  const newPostForm = document.querySelector('#new-post-form');
+  const userPosts = document.querySelector('#user-posts');
+  const editPostForm = document.querySelector('#edit-post-form');
+
+  if (newPostForm) {
+    newPostForm.addEventListener('submit', newPostHandler);
+  }
+  
+  if (userPosts) {
+    userPosts.addEventListener('click', deletePostHandler);
+    userPosts.addEventListener('click', editPostHandler);
+  }
+  
+  if (editPostForm) {
+    editPostForm.addEventListener('submit', updatePostHandler);
+  }
+});
+
 const newPostHandler = async (event) => {
   event.preventDefault();
 
@@ -14,7 +32,7 @@ const newPostHandler = async (event) => {
 
     if (response.ok) {
       const newPost = await response.json();
-      
+
       // Clear the form fields
       document.querySelector('#post-title').value = '';
       document.querySelector('#post-content').value = '';
@@ -44,7 +62,6 @@ const newPostHandler = async (event) => {
   }
 };
 
-// Handle deleting a post
 const deletePostHandler = async (event) => {
   if (event.target.classList.contains('delete-post-btn')) {
     const postId = event.target.closest('.post').getAttribute('data-post-id');
@@ -63,7 +80,6 @@ const deletePostHandler = async (event) => {
   }
 };
 
-// Handle editing a post
 let currentPostId;
 
 const editPostHandler = (event) => {
@@ -81,7 +97,6 @@ const editPostHandler = (event) => {
   }
 };
 
-// Handle updating a post
 const updatePostHandler = async (event) => {
   event.preventDefault();
 
@@ -107,9 +122,3 @@ const updatePostHandler = async (event) => {
     }
   }
 };
-
-// Event listeners
-document.querySelector('#new-post-form').addEventListener('submit', newPostHandler);
-document.querySelector('#user-posts').addEventListener('click', deletePostHandler);
-document.querySelector('#user-posts').addEventListener('click', editPostHandler);
-document.querySelector('#edit-post-form').addEventListener('submit', updatePostHandler);

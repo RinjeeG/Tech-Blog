@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const signupForm = document.querySelector('.signup-form');
+  if (signupForm) {
+    signupForm.addEventListener('submit', signupFormHandler);
+  }
+});
+
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
@@ -25,5 +32,3 @@ const signupFormHandler = async (event) => {
     alert('Please fill out all fields.');
   }
 };
-
-document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
