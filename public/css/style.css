@@ -1,0 +1,69 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  header {
+    background-color: #1f1f1f;
+    padding: 1em;
+  }
+  
+  header nav a {
+    color: #ffffff;
+    margin: 0 1em;
+    text-decoration: none;
+  }
+  
+  header nav a:hover {
+    color: #1abc9c;
+  }
+  
+  h2, h3 {
+    color: #1abc9c;
+  }
+  
+  .post {
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 5px;
+  }
+  
+  .comments {
+    margin-top: 1em;
+    padding-left: 1em;
+    border-left: 2px solid #1abc9c;
+  }
+  
+  textarea {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border: 1px solid #333;
+  }
+  
+  button {
+    background-color: #1abc9c;
+    color: #ffffff;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #16a085;
+  }
+  
+  /* Animation for futuristic feel */
+  @keyframes glow {
+    0% { box-shadow: 0 0 5px #1abc9c; }
+    50% { box-shadow: 0 0 20px #1abc9c; }
+    100% { box-shadow: 0 0 5px #1abc9c; }
+  }
+  
+  .post {
+    animation: glow 1.5s infinite alternate;
+  }
+  

@@ -1,6 +1,4 @@
-
-<main>
-  {{!-- Display all posts --}}
+<main class="container mt-4">
   <section id="all-posts">
     <h2>All Posts</h2>
     {{#each posts}}
@@ -8,34 +6,30 @@
         <h3>{{this.title}}</h3>
         <p>{{this.content}}</p>
         <p>Posted by {{this.user.username}} on {{this.createdAt}}</p>
-        <a href="/post/{{this.id}}">Read more</a>
+        <a href="#" class="toggle-comments" data-post-id="{{this.id}}">Show comments</a>
+        <div class="comments" data-post-id="{{this.id}}" style="display: none;">
+          {{#each this.comments}}
+            <p>{{this.comment_text}} - {{this.user.username}}</p>
+          {{/each}}
+        </div>
+        {{#if ../logged_in}}
+          <form class="new-comment-form" data-post-id="{{this.id}}">
+            <textarea name="comment_text" class="form-control mt-2" placeholder="Add a comment" required></textarea>
+            <button type="submit" class="btn btn-primary mt-2">Comment</button>
+          </form>
+        {{/if}}
       </div>
     {{/each}}
   </section>
 
-  {{!-- Display dashboard section if logged in --}}
   {{#if logged_in}}
-    <section id="dashboard">
-      <h2>Your Dashboard</h2>
-      <div id="user-posts">
-        {{#each userPosts}}
-          <div class="post">
-            <h3>{{this.title}}</h3>
-            <p>{{this.content}}</p>
-            <p>Posted on {{this.createdAt}}</p>
-            <a href="/post/{{this.id}}">Edit</a>
-          </div>
-        {{/each}}
-      </div>
-      <form id="new-post-form">
-        <h3>Create New Post</h3>
-        <input type="text" id="post-title" placeholder="Title" required>
-        <textarea id="post-content" placeholder="Content" required></textarea>
-        <button type="submit">Create Post</button>
+    <section id="dashboard" class="mt-4">
+      <h2>Create New Post</h2>
+      <form id="new-post-form" class="form-group">
+        <input type="text" id="post-title" class="form-control" placeholder="Title" required>
+        <textarea id="post-content" class="form-control mt-2" placeholder="Content" required></textarea>
+        <button type="submit" class="btn btn-primary mt-2">Create Post</button>
       </form>
     </section>
   {{/if}}
 </main>
-
-<script src="/js/logout.js"></script>
-<script src="/js/post.js"></script>

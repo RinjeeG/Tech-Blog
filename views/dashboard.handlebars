@@ -1,15 +1,31 @@
-<div>
-  <h2>Your Posts</h2>
-  {{#each posts}}
-  <div class="post">
-    <h2>{{this.title}}</h2>
-    <p>{{this.content}}</p>
-    <a href="/post/{{this.id}}">Edit</a>
-  </div>
-  {{/each}}
-</div>
-<form class="new-post-form">
-  <input type="text" id="post-title" placeholder="Title">
-  <textarea id="post-content" placeholder="Content"></textarea>
-  <button type="submit">Add Post</button>
-</form>
+<main class="container mt-4">
+  <section id="user-posts">
+    <h2>Your Posts</h2>
+    {{#each posts}}
+      <div class="post" data-post-id="{{this.id}}">
+        <h3>{{this.title}}</h3>
+        <p>{{this.content}}</p>
+        <button class="btn btn-warning edit-post-btn">Edit</button>
+        <button class="btn btn-danger delete-post-btn">Delete</button>
+      </div>
+    {{/each}}
+  </section>
+
+  <section id="dashboard">
+    <h2>Create New Post</h2>
+    <form id="new-post-form" class="form-group">
+      <input type="text" id="post-title" class="form-control" placeholder="Title" required>
+      <textarea id="post-content" class="form-control mt-2" placeholder="Content" required></textarea>
+      <button type="submit" class="btn btn-primary mt-2">Create Post</button>
+    </form>
+  </section>
+
+  <section id="edit-post-section" style="display: none;">
+    <h2>Edit Post</h2>
+    <form id="edit-post-form" class="form-group">
+      <input type="text" id="edit-post-title" class="form-control" placeholder="Title" required>
+      <textarea id="edit-post-content" class="form-control mt-2" placeholder="Content" required></textarea>
+      <button type="submit" class="btn btn-primary mt-2">Update Post</button>
+    </form>
+  </section>
+</main>
