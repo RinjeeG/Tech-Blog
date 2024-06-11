@@ -1,6 +1,19 @@
-<form class="signup-form">
-  <input type="text" id="username-signup" placeholder="Username">
-  <input type="password" id="password-signup" placeholder="Password">
-  <button type="submit">Sign Up</button>
-</form>
-<a href="/login">Login</a>
+<main class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="text-center">Sign Up</h2>
+      <form class="signup-form">
+        <div class="form-group">
+          <label for="username-signup">Username</label>
+          <input type="text" class="form-control" id="username-signup" placeholder="Enter username" required>
+        </div>
+        <div class="form-group">
+          <label for="password-signup">Password</label>
+          <input type="password" class="form-control" id="password-signup" placeholder="Enter password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</main>
+
