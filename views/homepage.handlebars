@@ -1,0 +1,41 @@
+
+<main>
+  {{!-- Display all posts --}}
+  <section id="all-posts">
+    <h2>All Posts</h2>
+    {{#each posts}}
+      <div class="post">
+        <h3>{{this.title}}</h3>
+        <p>{{this.content}}</p>
+        <p>Posted by {{this.user.username}} on {{this.createdAt}}</p>
+        <a href="/post/{{this.id}}">Read more</a>
+      </div>
+    {{/each}}
+  </section>
+
+  {{!-- Display dashboard section if logged in --}}
+  {{#if logged_in}}
+    <section id="dashboard">
+      <h2>Your Dashboard</h2>
+      <div id="user-posts">
+        {{#each userPosts}}
+          <div class="post">
+            <h3>{{this.title}}</h3>
+            <p>{{this.content}}</p>
+            <p>Posted on {{this.createdAt}}</p>
+            <a href="/post/{{this.id}}">Edit</a>
+          </div>
+        {{/each}}
+      </div>
+      <form id="new-post-form">
+        <h3>Create New Post</h3>
+        <input type="text" id="post-title" placeholder="Title" required>
+        <textarea id="post-content" placeholder="Content" required></textarea>
+        <button type="submit">Create Post</button>
+      </form>
+    </section>
+  {{/if}}
+</main>
+
+<script src="/js/logout.js"></script>
+<script src="/js/post.js"></script>
