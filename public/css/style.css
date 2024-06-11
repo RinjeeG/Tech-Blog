@@ -19,8 +19,60 @@ body {
     color: #1abc9c;
   }
   
+  main {
+    margin-top: 2em;
+  }
+  
   h2, h3 {
     color: #1abc9c;
+  }
+  
+  .form-group label {
+    color: #ffffff;
+  }
+  
+  .form-control {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border: 1px solid #333;
+  }
+  
+  .btn-primary {
+    background-color: #1abc9c;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #16a085;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #1f1f1f;
+  }
+  
+  footer h5 {
+    color: #1abc9c;
+  }
+  
+  footer p, footer a {
+    color: #ffffff;
+  }
+  
+  footer a:hover {
+    color: #1abc9c;
+  }
+  
+  /* Animation for futuristic feel */
+  @keyframes glow {
+    0% { box-shadow: 0 0 5px #1abc9c; }
+    50% { box-shadow: 0 0 20px #1abc9c; }
+    100% { box-shadow: 0 0 5px #1abc9c; }
   }
   
   .post {
@@ -29,6 +81,7 @@ body {
     padding: 1em;
     margin: 1em 0;
     border-radius: 5px;
+    animation: glow 1.5s infinite alternate;
   }
   
   .comments {
@@ -56,14 +109,14 @@ body {
     background-color: #16a085;
   }
   
-  /* Animation for futuristic feel */
-  @keyframes glow {
-    0% { box-shadow: 0 0 5px #1abc9c; }
-    50% { box-shadow: 0 0 20px #1abc9c; }
-    100% { box-shadow: 0 0 5px #1abc9c; }
+  /* Ensure the footer is at the bottom */
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
   
-  .post {
-    animation: glow 1.5s infinite alternate;
+  main {
+    flex: 1;
   }
   

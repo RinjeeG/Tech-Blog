@@ -2,7 +2,7 @@
   <section id="all-posts">
     <h2>All Posts</h2>
     {{#each posts}}
-      <div class="post">
+      <div class="post" data-post-id="{{this.id}}">
         <h3>{{this.title}}</h3>
         <p>{{this.content}}</p>
         <p>Posted by {{this.user.username}} on {{this.createdAt}}</p>
@@ -33,3 +33,7 @@
     </section>
   {{/if}}
 </main>
+
+<script src="/js/logout.js"></script>
+<script src="/js/post.js"></script>
+<script src="/js/comment.js"></script>
