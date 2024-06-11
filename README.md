@@ -64,11 +64,7 @@ A CMS-style blog site where developers can publish their blog posts and comment 
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Contact
+## Link
 
-- GitHub: [your-username](https://github.com/your-username)
-- Email: your-email@example.com
-
----
-
-This README provides a quick overview of your project, how to install and run it, and the resources you used. If you need further customization or additional sections, feel free to let me know!
+- GitHub Repo: https://github.com/RinjeeG/Tech-Blog.git
+- Render: your-email@example.com
