@@ -60,6 +60,9 @@ A CMS-style blog site where developers can publish their blog posts and comment 
 - [ChatGPT](https://chat.openai.com)
 - [YouTube](https://www.youtube.com)
 
+## Screenshots
+![alt text](<Screenshot 2024-06-17 220621.png>)
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
@@ -67,4 +70,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Link
 
 - GitHub Repo: https://github.com/RinjeeG/Tech-Blog.git
-- Render: your-email@example.com
+- Render: https://tech-blog-z3zj.onrender.com
